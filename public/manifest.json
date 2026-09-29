@@ -1,0 +1,12 @@
+{
+  "name": "Manpottery — Handcrafted Pottery Studio",
+  "short_name": "Manpottery",
+  "description": "Handcrafted pottery made with intention.",
+  "icons": [
+    {
+      "src": "images/fav-image.PNG",
+      "sizes": "1145x1145",
+      "type": "image/png"
+    }
+  ]
+}

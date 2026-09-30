@@ -14,7 +14,7 @@ export function IntroSection() {
         <AnimatedSection className="pl-5 pr-5 sm:px-8 lg:px-0">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl sm:aspect-[4/3] lg:aspect-[5/4] lg:rounded-l-none">
             <Image
-              src={`${BASE_PATH}/images/4545.png`}
+              src={`${BASE_PATH}/images/4545.webp`}
               alt="Our story"
               fill
               className="object-cover"

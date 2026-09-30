@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { imageDimensions } from "@/lib/image-dimensions";
 import { motion } from "framer-motion";
 import { useReducedMotion } from "framer-motion";
 
@@ -10,6 +11,8 @@ interface ImageCardProps {
   alt: string;
   className?: string;
   imageClassName?: string;
+  sizes?: string;
+  interactive?: boolean;
   aspectRatio?: "square" | "video" | "portrait" | "natural" | "fill";
 }
 
@@ -19,6 +22,8 @@ export function ImageCard({
   className,
   imageClassName,
   aspectRatio = "video",
+  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+  interactive = true,
 }: ImageCardProps) {
   const shouldReduceMotion = useReducedMotion();
 
@@ -34,7 +39,7 @@ export function ImageCard({
 
   return (
     <motion.div
-      whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+      whileHover={shouldReduceMotion || !interactive ? undefined : { y: -4 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
       className={cn(
         "group relative overflow-hidden rounded-2xl bg-sand",
@@ -46,13 +51,13 @@ export function ImageCard({
         src={src}
         alt={alt}
         fill={!isNatural}
-        {...(isNatural ? { width: 600, height: 400 } : {})}
+        {...(isNatural ? imageDimensions(src) : {})}
         className={cn(
           isNatural ? "w-full h-auto" : "",
           "object-cover transition-transform duration-700 group-hover:scale-105",
           imageClassName
         )}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        sizes={sizes}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-stone/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </motion.div>

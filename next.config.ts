@@ -8,7 +8,10 @@ const nextConfig: NextConfig = {
   basePath,
   assetPrefix: basePath || undefined,
   images: {
-    unoptimized: true,
+    loader: "custom",
+    loaderFile: "./lib/image-loader.ts",
+    deviceSizes: [320, 640, 960, 1280, 1920],
+    imageSizes: [],
   },
 };
 

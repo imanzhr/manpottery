@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "index.html",
+    "collection/index.html",
+    "courses/index.html",
+    "contact/index.html",
+    "about/index.html",
+    "products/index.html",
+    "gallery/index.html",
+    "collection/palette/index.html",
+    "collection/bloom/index.html",
+    "collection/rug/index.html",
+    "collection/flow/index.html",
+    "collection/edge/index.html"
+  ],
+  "brokenResources": [],
+  "photographs": 62,
+  "result": "passed",
+  "responsiveVariantReferences": 307,
+  "uniqueVariantFiles": 302
+}

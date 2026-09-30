@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
@@ -8,9 +9,9 @@ import { ImageCard } from "@/components/ui/ImageCard";
 import { galleryImages } from "@/lib/data";
 
 const galleryRows = Array.from({ length: 3 }, (_, rowIndex) => [
-  ...galleryImages.slice(rowIndex * 2),
-  ...galleryImages.slice(0, rowIndex * 2),
-]);
+  ...galleryImages.slice(rowIndex * 5),
+  ...galleryImages.slice(0, rowIndex * 5),
+].slice(0, 8));
 
 const galleryFrameRatios = [
   "aspect-[16/9]",
@@ -21,9 +22,29 @@ const galleryFrameRatios = [
 ] as const;
 
 export function GalleryPreview() {
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  const [pageVisible, setPageVisible] = useState(true);
+
+  useEffect(() => {
+    const element = marqueeRef.current;
+    if (!element) return;
+    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { rootMargin: '150px' });
+    observer.observe(element);
+    const updateVisibility = () => setPageVisible(!document.hidden);
+    updateVisibility();
+    document.addEventListener('visibilitychange', updateVisibility);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', updateVisibility);
+    };
+  }, []);
+
   return (
     <Section className="relative h-[100dvh] overflow-hidden p-0">
       <div
+        ref={marqueeRef}
+        data-active={visible && pageVisible}
         className="gallery-marquee absolute inset-0 flex flex-col gap-2 sm:gap-3"
         aria-hidden="true"
       >
@@ -44,7 +65,9 @@ export function GalleryPreview() {
                       src={image.src}
                       alt=""
                       aspectRatio="fill"
-                      className={`h-full w-auto shrink-0 ${
+                      sizes="(max-aspect-ratio: 3/4) 60vw, 50vh"
+                      interactive={false}
+                      className={`h-full w-auto min-w-[calc(100vw/8)] shrink-0 ${
                         galleryFrameRatios[
                           (imageIndex + rowIndex * 2) %
                             galleryFrameRatios.length

@@ -17,23 +17,25 @@ export function Navbar() {
 
   useEffect(() => {
     let animationFrame = 0;
+    const header = document.querySelector<HTMLElement>("[data-site-navbar]");
+    const darkSections = Array.from(document.querySelectorAll<HTMLElement>('[data-navbar-theme="light"]'));
+    let probeY = (header?.offsetHeight ?? 80) / 2;
+    let ranges: { top: number; bottom: number }[] = [];
+    const measure = () => {
+      probeY = (header?.offsetHeight ?? 80) / 2;
+      ranges = darkSections.map(section => {
+        const bounds = section.getBoundingClientRect();
+        return { top: bounds.top + window.scrollY, bottom: bounds.bottom + window.scrollY };
+      });
+      scheduleNavbarUpdate();
+    };
 
     const updateNavbarTheme = () => {
       animationFrame = 0;
       setScrolled(window.scrollY > 50);
 
-      const header = document.querySelector<HTMLElement>("[data-site-navbar]");
-      const probeY = (header?.offsetHeight ?? 80) / 2;
-      const darkSections = document.querySelectorAll<HTMLElement>(
-        '[data-navbar-theme="light"]',
-      );
-
-      setOverDarkSection(
-        Array.from(darkSections).some((section) => {
-          const bounds = section.getBoundingClientRect();
-          return bounds.top <= probeY && bounds.bottom > probeY;
-        }),
-      );
+      const position = window.scrollY + probeY;
+      setOverDarkSection(ranges.some(range => range.top <= position && range.bottom > position));
     };
 
     const scheduleNavbarUpdate = () => {
@@ -42,13 +44,17 @@ export function Navbar() {
       }
     };
 
-    scheduleNavbarUpdate();
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(document.body);
+    if (header) observer.observe(header);
     window.addEventListener("scroll", scheduleNavbarUpdate, { passive: true });
-    window.addEventListener("resize", scheduleNavbarUpdate);
+    window.addEventListener("resize", measure);
 
     return () => {
       window.removeEventListener("scroll", scheduleNavbarUpdate);
-      window.removeEventListener("resize", scheduleNavbarUpdate);
+      window.removeEventListener("resize", measure);
+      observer.disconnect();
       window.cancelAnimationFrame(animationFrame);
     };
   }, [pathname]);

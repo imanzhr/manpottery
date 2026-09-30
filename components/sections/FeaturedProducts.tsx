@@ -50,7 +50,7 @@ export function FeaturedProducts() {
       );
     };
     updateScrollBounds();
-    container.addEventListener("scroll", updateScrollBounds);
+    container.addEventListener("scroll", updateScrollBounds, { passive: true });
     return () => container.removeEventListener("scroll", updateScrollBounds);
   }, []);
 
@@ -94,34 +94,6 @@ export function FeaturedProducts() {
     }
   };
 
-  // Convert wheel movement to horizontal carousel movement only while the
-  // carousel can still move in that direction. At either edge, leave the
-  // wheel event alone so normal page scrolling resumes immediately.
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    const onWheel = (e: WheelEvent) => {
-      const delta =
-        Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-      if (delta === 0) return;
-
-      const atStart = container.scrollLeft <= 5;
-      const atEnd =
-        container.scrollLeft + container.clientWidth >=
-        container.scrollWidth - 5;
-
-      if ((delta < 0 && atStart) || (delta > 0 && atEnd)) {
-        return;
-      }
-
-      e.preventDefault();
-      container.scrollBy({ left: delta, behavior: "auto" });
-    };
-
-    container.addEventListener("wheel", onWheel, { passive: false });
-    return () => container.removeEventListener("wheel", onWheel);
-  }, []);
 
   return (
     <Section className="overflow-hidden bg-cream pt-10 pb-16 sm:pt-12 sm:pb-20 lg:pt-6 lg:pb-24">
@@ -207,9 +179,13 @@ export function FeaturedProducts() {
               onMouseMove={handleDragMove}
               onMouseUp={handleDragEnd}
               onMouseLeave={handleDragEnd}
-              onTouchStart={handleDragStart}
-              onTouchMove={handleDragMove}
-              onTouchEnd={handleDragEnd}
+              onTouchStart={(event) => {
+                hasDragged.current = false;
+                dragStartX.current = event.touches[0].clientX;
+              }}
+              onTouchMove={(event) => {
+                if (Math.abs(event.touches[0].clientX - dragStartX.current) > 5) hasDragged.current = true;
+              }}
             >
               {featuredProducts.map((product) => (
                 <div key={product.id} className="flex-shrink-0 w-72 sm:w-80 lg:w-72 snap-start scroll-smooth">

@@ -29,7 +29,7 @@ const flowImages = [
 
 const bloomImages = [
   `${BASE_PATH}/images/Bloom/IMG_6720.webp`,
-  `${BASE_PATH}/images/Bloom/IMG_6721.JPG`,
+  `${BASE_PATH}/images/Bloom/IMG_6721.webp`,
   `${BASE_PATH}/images/Bloom/IMG_6722.webp`,
   `${BASE_PATH}/images/Bloom/IMG_6723.webp`,
   `${BASE_PATH}/images/Bloom/IMG_8947.webp`,

@@ -9,6 +9,7 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { galleryImages } from "@/lib/data";
+import { imageDimensions } from "@/lib/image-dimensions";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -36,8 +37,12 @@ export default function GalleryPage() {
     (e: KeyboardEvent) => {
       if (lightboxIndex === null) return;
       if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowRight") goNext();
-      if (e.key === "ArrowLeft") goPrev();
+      if (e.key === "ArrowRight") {
+        setLightboxIndex(index => index === null ? null : (index + 1) % galleryImages.length);
+      }
+      if (e.key === "ArrowLeft") {
+        setLightboxIndex(index => index === null ? null : (index - 1 + galleryImages.length) % galleryImages.length);
+      }
     },
     [lightboxIndex]
   );
@@ -70,8 +75,7 @@ export default function GalleryPage() {
                     <Image
                       src={img.src}
                       alt={img.alt}
-                      width={600}
-                      height={400}
+                      {...imageDimensions(img.src)}
                       className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
@@ -127,9 +131,9 @@ export default function GalleryPage() {
               <Image
                 src={galleryImages[lightboxIndex].src}
                 alt={galleryImages[lightboxIndex].alt}
-                width={1200}
-                height={800}
-                className="w-full h-full object-contain"
+                {...imageDimensions(galleryImages[lightboxIndex].src)}
+                loading="eager"
+                className="w-full h-auto max-h-[85vh] object-contain"
                 sizes="100vw"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-center">

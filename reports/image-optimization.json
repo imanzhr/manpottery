@@ -1,0 +1,519 @@
+{
+  "totals": {
+    "before": 76001735,
+    "after": 6669314,
+    "variants": 14649504
+  },
+  "images": [
+    {
+      "image": "4545.webp",
+      "before": 2194973,
+      "after": 158844,
+      "width": 1082,
+      "height": 1453,
+      "variants": 372878
+    },
+    {
+      "image": "Bloom/IMG_6720.webp",
+      "before": 1010028,
+      "after": 186166,
+      "width": 1350,
+      "height": 2400,
+      "variants": 515848
+    },
+    {
+      "image": "Bloom/IMG_6721.webp",
+      "before": 433495,
+      "after": 165218,
+      "width": 1124,
+      "height": 2000,
+      "variants": 380328
+    },
+    {
+      "image": "Bloom/IMG_6722.webp",
+      "before": 721312,
+      "after": 225096,
+      "width": 1920,
+      "height": 2359,
+      "variants": 473266
+    },
+    {
+      "image": "Bloom/IMG_6723.webp",
+      "before": 1114518,
+      "after": 214914,
+      "width": 1350,
+      "height": 2400,
+      "variants": 591750
+    },
+    {
+      "image": "Bloom/IMG_8947.webp",
+      "before": 1905100,
+      "after": 117096,
+      "width": 1920,
+      "height": 2400,
+      "variants": 214486
+    },
+    {
+      "image": "Edge/IMG_8938.webp",
+      "before": 901994,
+      "after": 47326,
+      "width": 1920,
+      "height": 2024,
+      "variants": 91820
+    },
+    {
+      "image": "Edge/IMG_8939.webp",
+      "before": 776904,
+      "after": 58562,
+      "width": 1920,
+      "height": 2242,
+      "variants": 117656
+    },
+    {
+      "image": "Edge/IMG_8945.webp",
+      "before": 1015498,
+      "after": 90586,
+      "width": 1920,
+      "height": 2400,
+      "variants": 180930
+    },
+    {
+      "image": "Edge/IMG_8946.webp",
+      "before": 955052,
+      "after": 92300,
+      "width": 1920,
+      "height": 2400,
+      "variants": 189524
+    },
+    {
+      "image": "Edge/IMG_8948.webp",
+      "before": 622586,
+      "after": 62212,
+      "width": 1920,
+      "height": 2400,
+      "variants": 125930
+    },
+    {
+      "image": "Edge/IMG_8949.webp",
+      "before": 743714,
+      "after": 73690,
+      "width": 1920,
+      "height": 2400,
+      "variants": 155438
+    },
+    {
+      "image": "Edge/IMG_8950.webp",
+      "before": 1130896,
+      "after": 77470,
+      "width": 1920,
+      "height": 2400,
+      "variants": 155632
+    },
+    {
+      "image": "Edge/IMG_9242.webp",
+      "before": 1135484,
+      "after": 77692,
+      "width": 1350,
+      "height": 2400,
+      "variants": 208820
+    },
+    {
+      "image": "Edge/IMG_9243.webp",
+      "before": 1282962,
+      "after": 88078,
+      "width": 1920,
+      "height": 2400,
+      "variants": 162580
+    },
+    {
+      "image": "Edge/IMG_9318.webp",
+      "before": 638114,
+      "after": 39688,
+      "width": 1920,
+      "height": 1281,
+      "variants": 78892
+    },
+    {
+      "image": "Edge/IMG_9319.webp",
+      "before": 571104,
+      "after": 48460,
+      "width": 1601,
+      "height": 2400,
+      "variants": 111982
+    },
+    {
+      "image": "Edge/IMG_9399.webp",
+      "before": 539370,
+      "after": 80322,
+      "width": 1920,
+      "height": 2400,
+      "variants": 165754
+    },
+    {
+      "image": "Edge/IMG_9400.webp",
+      "before": 593410,
+      "after": 83910,
+      "width": 1601,
+      "height": 2400,
+      "variants": 203206
+    },
+    {
+      "image": "Edge/IMG_9401.webp",
+      "before": 828716,
+      "after": 37122,
+      "width": 1601,
+      "height": 2400,
+      "variants": 84220
+    },
+    {
+      "image": "Edge/IMG_9402.webp",
+      "before": 600668,
+      "after": 61958,
+      "width": 1601,
+      "height": 2400,
+      "variants": 142580
+    },
+    {
+      "image": "Edge/IMG_9449.webp",
+      "before": 728560,
+      "after": 90014,
+      "width": 1603,
+      "height": 2400,
+      "variants": 212190
+    },
+    {
+      "image": "Flow/DSC09539.webp",
+      "before": 2531216,
+      "after": 128234,
+      "width": 1600,
+      "height": 2400,
+      "variants": 273178
+    },
+    {
+      "image": "Flow/DSC09541.webp",
+      "before": 1645284,
+      "after": 93610,
+      "width": 1600,
+      "height": 2400,
+      "variants": 212780
+    },
+    {
+      "image": "Flow/_DSC0085.webp",
+      "before": 986754,
+      "after": 81350,
+      "width": 1350,
+      "height": 2400,
+      "variants": 200510
+    },
+    {
+      "image": "Flow/_DSC0108.webp",
+      "before": 1125904,
+      "after": 81886,
+      "width": 1350,
+      "height": 2400,
+      "variants": 218514
+    },
+    {
+      "image": "Flow/_DSC0113.webp",
+      "before": 1073542,
+      "after": 87164,
+      "width": 1350,
+      "height": 2400,
+      "variants": 231810
+    },
+    {
+      "image": "Flow/_DSC0117.webp",
+      "before": 842860,
+      "after": 66012,
+      "width": 1350,
+      "height": 2400,
+      "variants": 168466
+    },
+    {
+      "image": "Flow/_DSC0121.webp",
+      "before": 750336,
+      "after": 68306,
+      "width": 1350,
+      "height": 2400,
+      "variants": 179354
+    },
+    {
+      "image": "Flow/_DSC0267.webp",
+      "before": 644572,
+      "after": 66480,
+      "width": 1350,
+      "height": 2400,
+      "variants": 166916
+    },
+    {
+      "image": "Flow/_DSC0284.webp",
+      "before": 832128,
+      "after": 112466,
+      "width": 1350,
+      "height": 2400,
+      "variants": 296944
+    },
+    {
+      "image": "Flow/_DSC0290.webp",
+      "before": 735008,
+      "after": 96866,
+      "width": 1350,
+      "height": 2400,
+      "variants": 252448
+    },
+    {
+      "image": "Flow/_DSC0293.webp",
+      "before": 1048358,
+      "after": 70400,
+      "width": 1350,
+      "height": 2400,
+      "variants": 183142
+    },
+    {
+      "image": "IMG_1824.PNG",
+      "before": 87758,
+      "after": 87758,
+      "variants": 0
+    },
+    {
+      "image": "Kargah/IMG_4716.webp",
+      "before": 1433238,
+      "after": 152052,
+      "width": 1350,
+      "height": 2400,
+      "variants": 378460
+    },
+    {
+      "image": "Kargah/IMG_4718.webp",
+      "before": 1149718,
+      "after": 141546,
+      "width": 1350,
+      "height": 2400,
+      "variants": 373642
+    },
+    {
+      "image": "Kargah/IMG_4720.webp",
+      "before": 1021294,
+      "after": 131600,
+      "width": 1350,
+      "height": 2400,
+      "variants": 353074
+    },
+    {
+      "image": "Kargah/IMG_4725.webp",
+      "before": 1134582,
+      "after": 111726,
+      "width": 1350,
+      "height": 2400,
+      "variants": 293912
+    },
+    {
+      "image": "Kargah/IMG_4727.webp",
+      "before": 420212,
+      "after": 104122,
+      "width": 1170,
+      "height": 2080,
+      "variants": 215344
+    },
+    {
+      "image": "Pallet/_DSC0225.webp",
+      "before": 571574,
+      "after": 52030,
+      "width": 1920,
+      "height": 1080,
+      "variants": 101420
+    },
+    {
+      "image": "Pallet/_DSC0230.webp",
+      "before": 850946,
+      "after": 76328,
+      "width": 1920,
+      "height": 1080,
+      "variants": 146400
+    },
+    {
+      "image": "Pallet/_DSC0237.webp",
+      "before": 1369176,
+      "after": 224516,
+      "width": 1920,
+      "height": 1080,
+      "variants": 406264
+    },
+    {
+      "image": "Pallet/_DSC0241.webp",
+      "before": 2654796,
+      "after": 240438,
+      "width": 1920,
+      "height": 1080,
+      "variants": 432150
+    },
+    {
+      "image": "Pallet/_DSC0249.webp",
+      "before": 739302,
+      "after": 35200,
+      "width": 1920,
+      "height": 1077,
+      "variants": 75692
+    },
+    {
+      "image": "Pallet/_DSC0256.webp",
+      "before": 471252,
+      "after": 61482,
+      "width": 1350,
+      "height": 2400,
+      "variants": 164062
+    },
+    {
+      "image": "Pallet/_DSC0260.webp",
+      "before": 434120,
+      "after": 47766,
+      "width": 1350,
+      "height": 2400,
+      "variants": 119970
+    },
+    {
+      "image": "Pallet/_DSC0263.webp",
+      "before": 417806,
+      "after": 54224,
+      "width": 1350,
+      "height": 2400,
+      "variants": 147020
+    },
+    {
+      "image": "Pallet/_DSC0310.webp",
+      "before": 1261438,
+      "after": 199512,
+      "width": 1350,
+      "height": 2400,
+      "variants": 540602
+    },
+    {
+      "image": "Rug/DSC09452.webp",
+      "before": 1124920,
+      "after": 69640,
+      "width": 1600,
+      "height": 2400,
+      "variants": 138656
+    },
+    {
+      "image": "Rug/DSC09457.webp",
+      "before": 1141372,
+      "after": 81548,
+      "width": 1600,
+      "height": 2400,
+      "variants": 163528
+    },
+    {
+      "image": "Rug/DSC09461.webp",
+      "before": 1338976,
+      "after": 106442,
+      "width": 1600,
+      "height": 2400,
+      "variants": 223810
+    },
+    {
+      "image": "Rug/DSC09472.webp",
+      "before": 2072406,
+      "after": 160972,
+      "width": 1600,
+      "height": 2400,
+      "variants": 339390
+    },
+    {
+      "image": "Rug/DSC09474.webp",
+      "before": 1094546,
+      "after": 72630,
+      "width": 1600,
+      "height": 2400,
+      "variants": 152354
+    },
+    {
+      "image": "Rug/DSC09481.webp",
+      "before": 2763582,
+      "after": 123940,
+      "width": 1600,
+      "height": 2400,
+      "variants": 278920
+    },
+    {
+      "image": "Rug/DSC09488.webp",
+      "before": 1855470,
+      "after": 161994,
+      "width": 1600,
+      "height": 2400,
+      "variants": 354964
+    },
+    {
+      "image": "Rug/DSC09498.webp",
+      "before": 1736028,
+      "after": 92534,
+      "width": 1920,
+      "height": 1280,
+      "variants": 174694
+    },
+    {
+      "image": "Rug/DSC09503.webp",
+      "before": 2556338,
+      "after": 153352,
+      "width": 1600,
+      "height": 2400,
+      "variants": 352134
+    },
+    {
+      "image": "Rug/DSC09507.webp",
+      "before": 2003044,
+      "after": 111168,
+      "width": 1600,
+      "height": 2400,
+      "variants": 257818
+    },
+    {
+      "image": "Rug/DSC0952..webp",
+      "before": 2600438,
+      "after": 160632,
+      "width": 1600,
+      "height": 2400,
+      "variants": 345488
+    },
+    {
+      "image": "Rug/DSC09521.webp",
+      "before": 1940748,
+      "after": 94802,
+      "width": 1600,
+      "height": 2400,
+      "variants": 216672
+    },
+    {
+      "image": "Rug/DSC09524.webp",
+      "before": 2600438,
+      "after": 160632,
+      "width": 1600,
+      "height": 2400,
+      "variants": 345488
+    },
+    {
+      "image": "Rug/DSC09530.webp",
+      "before": 2168662,
+      "after": 116170,
+      "width": 1600,
+      "height": 2400,
+      "variants": 269448
+    },
+    {
+      "image": "Rug/DSC09533.webp",
+      "before": 2285508,
+      "after": 142340,
+      "width": 1600,
+      "height": 2400,
+      "variants": 313844
+    },
+    {
+      "image": "fav-image.PNG",
+      "before": 41627,
+      "after": 10720,
+      "variants": 0
+    }
+  ],
+  "variantReferences": 307,
+  "uniqueVariantFiles": 302
+}

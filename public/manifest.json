@@ -5,7 +5,7 @@
   "icons": [
     {
       "src": "images/fav-image.PNG",
-      "sizes": "1145x1145",
+      "sizes": "256x256",
       "type": "image/png"
     }
   ]

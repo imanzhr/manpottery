@@ -1,0 +1,25 @@
+{
+  "basePath": "/manpottery",
+  "checks": [
+    "Responsive hero and offscreen marquee pause",
+    "Direct page and loaded images: /about/",
+    "Direct page and loaded images: /collection/",
+    "Direct page and loaded images: /collection/palette/",
+    "Direct page and loaded images: /collection/flow/",
+    "Direct page and loaded images: /collection/bloom/",
+    "Direct page and loaded images: /collection/rug/",
+    "Direct page and loaded images: /collection/edge/",
+    "Direct page and loaded images: /products/",
+    "Direct page and loaded images: /gallery/",
+    "Direct page and loaded images: /courses/",
+    "Direct page and loaded images: /contact/",
+    "Client navigation, history and scroll reset",
+    "Rapid navigation and fullscreen gallery lightbox with keyboard",
+    "Product modal open and animated close",
+    "Vertical wheel scrolling and visible-only gallery animation",
+    "390px mobile menu, navigation, no horizontal overflow and lightbox",
+    "Reduced-motion content remains visible and curtain disabled"
+  ],
+  "errors": [],
+  "brokenResponses": []
+}

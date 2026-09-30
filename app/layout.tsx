@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { DM_Serif_Display, Nunito } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { PageTransition } from "@/components/layout/PageTransition";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import "@/styles/globals.css";
 import { BASE_PATH } from "@/lib/base-path";
@@ -48,10 +47,8 @@ export default function RootLayout({
       <body className="font-body bg-cream text-stone antialiased">
         <GrainOverlay />
         <Navbar />
-        <PageTransition>
-          <main>{children}</main>
-          <Footer />
-        </PageTransition>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

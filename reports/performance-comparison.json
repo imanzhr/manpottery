@@ -1,0 +1,51 @@
+{
+  "basePath": "",
+  "checks": [],
+  "errors": [],
+  "brokenResponses": [],
+  "conditions": {
+    "latencyMs": 100,
+    "downloadMbps": 3,
+    "cpuSlowdown": 4,
+    "coldCache": true,
+    "thirdPartyEmbedsBlocked": true
+  },
+  "performance": {
+    "desktop": {
+      "before": {
+        "lcpMs": 13828,
+        "cls": 0.0003,
+        "imageBytes": 8917027,
+        "totalBytes": 9718918,
+        "heroSrc": "images/Pallet/_DSC0230.webp",
+        "heroNaturalWidth": 7952
+      },
+      "after": {
+        "lcpMs": 968,
+        "cls": 0,
+        "imageBytes": 354764,
+        "totalBytes": 1219833,
+        "heroSrc": "images/optimized/48f59d8bf04e3850-1920.webp",
+        "heroNaturalWidth": 1440
+      }
+    },
+    "mobile": {
+      "before": {
+        "lcpMs": 7068,
+        "cls": 0.0001,
+        "imageBytes": 3045919,
+        "totalBytes": 3716741,
+        "heroSrc": "images/Pallet/_DSC0230.webp",
+        "heroNaturalWidth": 7952
+      },
+      "after": {
+        "lcpMs": 916,
+        "cls": 0,
+        "imageBytes": 138464,
+        "totalBytes": 854562,
+        "heroSrc": "images/optimized/48f59d8bf04e3850-960.webp",
+        "heroNaturalWidth": 389
+      }
+    }
+  }
+}

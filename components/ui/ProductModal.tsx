@@ -26,8 +26,6 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
     }
   }, [product, handleKeyDown]);
 
-  if (!product) return null;
-
   return (
     <AnimatePresence>
       {product && (
@@ -66,6 +64,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
+                loading="eager"
               />
             </div>
 

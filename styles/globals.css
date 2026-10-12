@@ -172,3 +172,38 @@
   }
   .gallery-marquee-track { animation: none; will-change: auto !important; }
 }
+
+/* Compact product previews keep the photograph and details in one view. */
+.product-modal-panel {
+  max-width: 36rem;
+  max-height: calc(100vh - 2rem);
+  max-height: calc(100dvh - 2rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.product-modal-image {
+  height: min(60vw, 32vh, 18rem);
+  height: min(60vw, 32dvh, 18rem);
+  background: var(--sand);
+}
+.product-modal-content { padding: 1.25rem; }
+.product-modal-heading { gap: 0.75rem; margin-bottom: 0.75rem; }
+.product-modal-heading h2 { line-height: 1.2; }
+.product-modal-price { max-width: 45%; text-align: right; line-height: 1.25; }
+.product-modal-description { font-size: 0.875rem; line-height: 1.5; margin-bottom: 1rem; }
+.product-modal-specs { gap: 0.875rem 1rem; font-size: 0.8125rem; line-height: 1.45; }
+
+/* A short, horizontal hero on phones; retain the full desktop hero. */
+.home-hero { height: auto; aspect-ratio: 16 / 10; }
+.mobile-nav-links { gap: clamp(0.75rem, 4vh, 2rem); padding: 6rem 1rem 2rem; overflow-y: auto; }
+@media (min-width: 768px) {
+  .home-hero { height: 100vh; height: 100svh; min-height: 600px; aspect-ratio: auto; }
+}
+/* Short landscape screens use a side-by-side preview to preserve the details. */
+@media (min-width: 480px) and (max-height: 500px) {
+  .product-modal-panel { display: grid; grid-template-columns: 40% minmax(0, 1fr); max-width: 48rem; }
+  .product-modal-image { height: auto; min-height: 100%; }
+  .product-modal-content { padding: 1rem; }
+  .product-modal-heading { padding-right: 2.5rem; }
+}

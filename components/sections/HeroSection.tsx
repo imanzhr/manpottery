@@ -12,7 +12,7 @@ export function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
+    <section className="relative aspect-[16/9] w-full overflow-hidden md:aspect-auto md:h-screen md:min-h-[600px]">
       <Image
         src={`${BASE_PATH}/images/Pallet/_DSC0230.webp`}
         alt="Colorful handcrafted serveware from the Palette collection"
@@ -23,7 +23,7 @@ export function HeroSection() {
       />
       <div className="absolute inset-0 bg-[#3d383342]" />
 
-      <Container className="relative z-10 flex h-full items-end justify-center pb-14 sm:pb-16 lg:pb-20">
+      <Container className="relative z-10 flex h-full items-end justify-center pb-6 sm:pb-8 md:pb-16 lg:pb-20">
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}

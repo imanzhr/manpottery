@@ -86,7 +86,7 @@ export function Navbar() {
             <Link
               href="/"
               className="font-display text-2xl tracking-tight transition-colors duration-300"
-              style={{ color: navbarTextColor }}
+              style={{ color: mobileOpen ? "#FFFFFF" : navbarTextColor }}
             >
               Manpottery
             </Link>
@@ -115,8 +115,10 @@ export function Navbar() {
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2 transition-colors"
-              style={{ color: mobileOpen ? "#3D3833" : navbarTextColor }}
+              style={{ color: mobileOpen ? "#FFFFFF" : navbarTextColor }}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -132,9 +134,10 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
+            id="mobile-navigation"
             className="fixed inset-0 z-30 backdrop-blur-sm lg:hidden"
             style={{
-              backgroundColor: "rgb(245 240 232 / 15%)",
+              backgroundColor: "rgb(35 31 28 / 55%)",
             }}
           >
             <div className="flex flex-col items-center justify-center h-full gap-8">
@@ -151,7 +154,7 @@ export function Navbar() {
                       "font-display text-3xl transition-colors duration-300",
                       pathname === link.href
                         ? "text-terracotta"
-                        : "text-stone hover:text-terracotta",
+                        : "text-white hover:text-terracotta",
                     )}
                   >
                     {link.label}

@@ -1,0 +1,34 @@
+{
+  "build": "passed",
+  "eslint": "passed",
+  "typescript": "passed",
+  "checks": {
+    "modal_panel_css": true,
+    "responsive_image_css": true,
+    "horizontal_mobile_hero": true,
+    "desktop_hero_preserved": true,
+    "compact_modal_in_home_and_products": true,
+    "menu_white_class": true,
+    "menu_dark_background": true,
+    "mobile_hero_rendered": true,
+    "all_local_assets_exist": true
+  },
+  "pages": [
+    "404.html",
+    "index.html",
+    "collection/index.html",
+    "about/index.html",
+    "products/index.html",
+    "contact/index.html",
+    "courses/index.html",
+    "gallery/index.html",
+    "404/index.html",
+    "collection/flow/index.html",
+    "collection/bloom/index.html",
+    "collection/palette/index.html",
+    "collection/edge/index.html",
+    "collection/rug/index.html"
+  ],
+  "missingAssets": [],
+  "visualBrowserCheck": "unavailable: local browser could not launch and cloud browser cannot access local preview"
+}

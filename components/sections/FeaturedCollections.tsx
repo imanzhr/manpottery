@@ -33,7 +33,7 @@ export function FeaturedCollections() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-5 lg:gap-5">
           {collections.map((collection, i) => (
             <AnimatedSection key={collection.slug} delay={i * 0.1}>
               <Link href={`/collection/${collection.slug}`} className="group block">
@@ -41,6 +41,7 @@ export function FeaturedCollections() {
                   src={collection.heroImage}
                   alt={collection.title}
                   aspectRatio="portrait"
+                  sizes="(max-width: 1023px) 50vw, 20vw"
                   className="mb-4"
                 />
                 <h3 className="font-display text-xl text-stone group-hover:text-terracotta transition-colors duration-300">

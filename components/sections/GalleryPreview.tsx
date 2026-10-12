@@ -41,7 +41,7 @@ export function GalleryPreview() {
   }, []);
 
   return (
-    <Section className="relative h-[100dvh] overflow-hidden p-0">
+    <Section className="relative h-[50dvh] md:h-[100dvh] overflow-hidden p-0">
       <div
         ref={marqueeRef}
         data-active={visible && pageVisible}
@@ -65,7 +65,7 @@ export function GalleryPreview() {
                       src={image.src}
                       alt=""
                       aspectRatio="fill"
-                      sizes="(max-aspect-ratio: 3/4) 60vw, 50vh"
+                      sizes="(max-width: 767px) 30vw, (max-aspect-ratio: 3/4) 60vw, 50vh"
                       interactive={false}
                       className={`h-full w-auto min-w-[calc(100vw/8)] shrink-0 ${
                         galleryFrameRatios[
@@ -94,20 +94,20 @@ export function GalleryPreview() {
       />
       <div className="pointer-events-none absolute inset-0 z-20 flex items-center">
         <Container>
-          <div className="pointer-events-auto max-w-xl border-l border-white/45 pl-6 text-cream sm:pl-8 lg:pl-10">
-            <span className="mb-5 inline-block text-xs font-medium uppercase tracking-[0.28em] text-cream/75 sm:text-sm">
+          <div className="pointer-events-auto max-w-xl border-l border-white/45 pl-4 text-cream sm:pl-8 lg:pl-10">
+            <span className="mb-3 inline-block sm:mb-5 text-xs font-medium uppercase tracking-[0.28em] text-cream/75 sm:text-sm">
               Gallery
             </span>
-            <h2 className="mb-5 max-w-lg font-display text-4xl leading-[1.08] text-cream sm:text-6xl lg:text-7xl">
+            <h2 className="mb-3 max-w-lg font-display text-3xl sm:mb-5 leading-[1.08] text-cream sm:text-6xl lg:text-7xl">
               Moments in clay
             </h2>
-            <p className="max-w-md text-sm leading-relaxed text-cream/80 sm:text-base">
+            <p className="max-w-md text-xs leading-relaxed text-cream/80 sm:text-base">
               A visual diary of our work — from the studio to the shelf, every
               image tells part of the story.
             </p>
             <Link
               href="/gallery"
-              className="mt-8 inline-flex items-center gap-2 border-b border-cream/50 pb-1 text-sm font-medium text-cream transition-colors hover:border-cream hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-4 focus-visible:ring-offset-[#211b17]"
+              className="mt-4 inline-flex sm:mt-8 items-center gap-2 border-b border-cream/50 pb-1 text-sm font-medium text-cream transition-colors hover:border-cream hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream focus-visible:ring-offset-4 focus-visible:ring-offset-[#211b17]"
             >
               Full gallery
               <ArrowRight aria-hidden="true" size={16} />

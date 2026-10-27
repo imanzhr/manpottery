@@ -47,7 +47,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="relative bg-cream rounded-3xl overflow-hidden max-w-3xl lg:max-w-xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+            className="relative bg-cream rounded-3xl overflow-hidden max-w-3xl lg:max-w-[720px] w-full max-h-[90vh] overflow-y-auto shadow-2xl"
           >
             <button
               onClick={onClose}
@@ -57,20 +57,20 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
               <X size={20} className="text-stone" />
             </button>
 
-            <div className="relative aspect-[4/3] w-full lg:aspect-auto lg:h-[min(34dvh,300px)]">
+            <div className="relative aspect-[4/3] w-full lg:aspect-auto lg:h-[min(44dvh,420px,calc(90dvh-310px))]">
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
                 className="object-cover"
-                sizes="(min-width: 1024px) 576px, (max-width: 768px) 100vw, 768px"
+                sizes="(min-width: 1024px) 720px, (max-width: 768px) 100vw, 768px"
                 loading="eager"
               />
             </div>
 
-            <div className="p-8 sm:p-10 lg:p-6">
+            <div className="p-8 sm:p-10 lg:p-8">
               <div className="flex items-start justify-between gap-4 mb-4 lg:mb-3">
-                <h2 className="font-display text-2xl sm:text-3xl lg:text-2xl text-stone">
+                <h2 className="font-display text-2xl sm:text-3xl lg:text-3xl text-stone">
                   {product.name}
                 </h2>
                 <span className="text-terracotta font-display text-xl shrink-0">
@@ -78,7 +78,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
                 </span>
               </div>
 
-              <p className="text-warm-gray leading-relaxed mb-8 lg:mb-4 lg:text-sm">
+              <p className="text-warm-gray leading-relaxed mb-8 lg:mb-4 lg:text-base">
                 {product.description}
               </p>
 

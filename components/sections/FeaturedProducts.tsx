@@ -51,13 +51,21 @@ export function FeaturedProducts() {
     };
     updateScrollBounds();
     container.addEventListener("scroll", updateScrollBounds, { passive: true });
-    return () => container.removeEventListener("scroll", updateScrollBounds);
+    const resizeObserver = new ResizeObserver(updateScrollBounds);
+    resizeObserver.observe(container);
+    return () => {
+      container.removeEventListener("scroll", updateScrollBounds);
+      resizeObserver.disconnect();
+    };
   }, []);
 
   const scroll = (direction: "left" | "right") => {
     const container = scrollContainerRef.current;
     if (!container) return;
-    const slideWidth = 320;
+    const firstCard = container.firstElementChild;
+    if (!firstCard) return;
+    const slideWidth = firstCard.getBoundingClientRect().width +
+      (parseFloat(window.getComputedStyle(container).columnGap) || 0);
     container.scrollBy({ left: direction === "left" ? -slideWidth : slideWidth, behavior: "smooth" });
   };
 
@@ -142,38 +150,11 @@ export function FeaturedProducts() {
             </h2>
           </div>
 
-          <div className="relative">
-            {/* Mobile/tablet navigation */}
-            <button
-              onClick={() => scroll("left")}
-              disabled={!canScrollLeft}
-              className={`lg:hidden absolute left-3 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-colors duration-300 shadow-sm ${
-                canScrollLeft
-                  ? "text-stone/60 hover:text-terracotta"
-                  : "text-stone/20 cursor-default"
-              }`}
-              aria-label="Previous products"
-            >
-              <ChevronLeft size={28} />
-            </button>
-
-            <button
-              onClick={() => scroll("right")}
-              disabled={!canScrollRight}
-              className={`lg:hidden absolute right-3 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition-colors duration-300 shadow-sm ${
-                canScrollRight
-                  ? "text-stone/60 hover:text-terracotta"
-                  : "text-stone/20 cursor-default"
-              }`}
-              aria-label="Next products"
-            >
-              <ChevronRight size={28} />
-            </button>
-
+          <div className="relative mx-5 sm:mx-8 lg:mx-0">
             {/* Horizontal carousel with drag support — no hover scrolling */}
             <div
               ref={scrollContainerRef}
-              className="flex gap-8 overflow-x-auto overflow-y-hidden scrollbar-hide px-0 py-2 lg:px-0"
+              className="flex gap-4 sm:gap-6 lg:gap-8 overflow-x-auto overflow-y-hidden scrollbar-hide px-0 py-2 lg:px-0"
               style={{ scrollBehavior: "smooth", scrollSnapType: "x mandatory" }}
               onMouseDown={handleDragStart}
               onMouseMove={handleDragMove}
@@ -188,7 +169,7 @@ export function FeaturedProducts() {
               }}
             >
               {featuredProducts.map((product) => (
-                <div key={product.id} className="flex-shrink-0 w-72 sm:w-80 lg:w-72 snap-start scroll-smooth">
+                <div key={product.id} className="min-w-0 flex-shrink-0 w-[calc(100%-3rem)] sm:w-80 lg:w-72 snap-start scroll-smooth">
                   <button
                     onClick={() => {
                       if (!hasDragged.current) {
@@ -204,7 +185,8 @@ export function FeaturedProducts() {
                       src={product.image}
                       alt={product.name}
                       aspectRatio="portrait"
-                      className="mb-4"
+                      className="mb-4 aspect-square sm:aspect-[3/4]"
+                      sizes="(max-width: 639px) calc(100vw - 88px), (max-width: 1023px) 320px, 288px"
                     />
                     <h3 className="font-display text-xl text-stone group-hover:text-terracotta transition-colors duration-500 mb-2">
                       {product.name}

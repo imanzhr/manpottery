@@ -63,6 +63,26 @@ export function Navbar() {
     setMobileOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileOpen(false);
+    };
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setMobileOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+      desktop.removeEventListener("change", closeOnDesktop);
+    };
+  }, [mobileOpen]);
+
   const useLightText = !scrolled || overDarkSection;
   const navbarTextColor = useLightText ? "#FFFFFF" : "#3D3833";
 
@@ -72,13 +92,15 @@ export function Navbar() {
         data-site-navbar
         className={cn(
           "fixed top-0 left-0 right-0 z-40 transition-all duration-500",
-          scrolled ? "backdrop-blur-sm" : "backdrop-blur-none",
+          scrolled && !mobileOpen ? "backdrop-blur-sm" : "backdrop-blur-none",
         )}
         style={{
-          backgroundColor: scrolled ? "rgba(0, 0, 0, 0.0)" : "transparent",
+          backgroundColor: "transparent",
+          backdropFilter: mobileOpen ? "none" : undefined,
+          WebkitBackdropFilter: mobileOpen ? "none" : undefined,
           boxShadow: scrolled && !mobileOpen ? "0 1px 10px rgba(0, 0, 0, 0.1)" : "none",
           transition:
-            "box-shadow 500ms ease, backdrop-filter 500ms ease, background-color 500ms ease",
+            mobileOpen ? "none" : "box-shadow 500ms ease, background-color 500ms ease",
         }}
       >
         <Container>
@@ -114,7 +136,7 @@ export function Navbar() {
             {/* Mobile toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 transition-colors"
+              className="lg:hidden flex h-11 w-11 items-center justify-center transition-colors"
               style={{ color: mobileOpen ? "#FFFFFF" : navbarTextColor }}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
@@ -135,12 +157,12 @@ export function Navbar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             id="mobile-navigation"
-            className="fixed inset-0 z-30 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-30 overflow-y-auto backdrop-blur-sm lg:hidden"
             style={{
               backgroundColor: "rgb(35 31 28 / 55%)",
             }}
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8">
+            <div className="flex min-h-full flex-col items-center justify-center gap-5 px-5 pb-8 pt-24 sm:gap-8">
               {NAV_LINKS.map((link, i) => (
                 <motion.div
                   key={link.href}
@@ -150,6 +172,7 @@ export function Navbar() {
                 >
                   <Link
                     href={link.href}
+                    onClick={() => setMobileOpen(false)}
                     className={cn(
                       "font-display text-3xl transition-colors duration-300",
                       pathname === link.href
